@@ -1,0 +1,21 @@
+#chart-gauge,
+#chart-pie,
+#chart-column,
+#chart-line {
+  display: block;
+  min-width: 150px;
+  height: 500px;
+  margin: 0 auto;
+}
+label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+:host::ng-deep {
+  .ng-value-container {
+    padding: 0.3rem !important;
+    flex-wrap: inherit !important;
+  }
+}

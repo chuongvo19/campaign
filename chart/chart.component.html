@@ -1,0 +1,35 @@
+<div class="container-fluid py-3">
+    <div class="row mt-5">
+        <div style="display: flex;">
+            <div class="" style="width: 33%; margin-right: 30px; margin-top: -21px; ">
+                <label translate>detail.filter-legends</label>
+                <vt-mutilselect-checkbox [items]="legendConfigs" bindLabel="name" bindValue="id" [searchable]="true"
+                    [inapp]="false" [inappCheckAll]="false" [(ngModel)]="legendsFilterBackup"
+                    (ngModelChange)="handleOnChangeLegend($event)" style="min-width: 230px;">
+                </vt-mutilselect-checkbox>
+            </div>
+            <form [formGroup]="serverFilterForm" style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                    <div style="margin-top: -21px; width: 45%">
+                        <label translate>detail.filter-campaigns</label>
+                        <vt-mutilselect-checkbox [items]="listCampaign" bindLabel="name" bindValue="campaignId"
+                            [searchable]="true" (change)="changeCampaign($event)" formControlName="campaignIds"
+                            style="min-width: 230px;">
+                        </vt-mutilselect-checkbox>
+                    </div>
+                    <div style="margin-top: -21px; width: 35%">
+                        <div class="calendar">
+                            <label translate>detail.date</label>
+                            <vt-select-time [timeForm]="serverFilterForm" [controlTimeStart]="'startDate'"
+                                [controlTimeEnd]="'endDate'" (changeSelected)="onDateChange($event)">
+                            </vt-select-time>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div id="chart-line"></div>
+        </div>
+    </div>
+</div>
